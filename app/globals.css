@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.fundo {
+    background-image: url("../public/fundo-b.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.questao {
+    background-color: #00000073;
+}
+
+.tabela {
+    background-color: #00000073;
+}
+
+
