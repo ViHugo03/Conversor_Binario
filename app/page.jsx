@@ -13,11 +13,13 @@ export default function Home() {
   }
 
   function validateString(input) {
-    const normalizedInput = removeAccents(input.toLowerCase());
-    const normalizedTarget = removeAccents("o caminho da luz e o binario".toLowerCase());
-
-    return normalizedInput === normalizedTarget;
+    const textoEntrada = removeAccents(input.toLowerCase());
+    
+    const regex = /binario/;
+  
+    return regex.test(textoEntrada);
   }
+  
 
   function validarResposta(e) {
 

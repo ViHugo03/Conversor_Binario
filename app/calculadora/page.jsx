@@ -3,8 +3,9 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { useRouter } from 'next/navigation';
+import axiosInstance from "../Config/config";
 
-export default function Home(props) {
+export default function Home() {
 
   const [texto, setTexto] = useState('');
   const router = useRouter();
@@ -13,6 +14,23 @@ export default function Home(props) {
   const [octal, setOctal] = useState('');
   const [hexadecimal, setHexadecimal] = useState('');
   const [binario, setBinario] = useState('');
+
+  function salvarConversao(dec, oct, hex, bin) {
+   
+    axiosInstance.post("/conversao", {
+      decimal:dec, 
+      octal:oct, 
+      hexa:hex, 
+      bin:bin
+    })
+      .then(response => {
+        console.log("Dados salvos com sucesso:", response);
+      })
+      .catch(error => {
+        console.error("Erro ao salvar os dados:",error);
+      });
+
+  }
 
   function Calcular() {
     if (inpDec.value != "") {
@@ -49,10 +67,12 @@ export default function Home(props) {
 
     let binaria = decimal.toString(2);
 
+
     inpOc.value = octal;
     inpHex.value = hexadecimal;
     inpBin.value = binaria;
 
+    salvarConversao(decimal, octal, hexadecimal, binaria);
   }
 
   function btOc() {
@@ -65,7 +85,7 @@ export default function Home(props) {
     inpHex.value = hexadecimal.toUpperCase();
     inpBin.value = binaria;
 
-
+    salvarConversao(decimal, aux, hexadecimal, binaria);
   }
 
   function btHex() {
@@ -79,6 +99,7 @@ export default function Home(props) {
     inpDec.value = decimal;
     inpOc.value = octal;
     inpBin.value = binaria;
+    salvarConversao(decimal, octal, aux, binaria);
   }
 
   function btBin() {
@@ -93,8 +114,7 @@ export default function Home(props) {
 
     inpOc.value = octal;
     inpHex.value = hexadecimal;
-
-
+    salvarConversao(decimal, octal, hexadecimal, aux);
   }
 
 
