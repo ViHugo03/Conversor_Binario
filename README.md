@@ -40,7 +40,8 @@ Este é um projeto desenvolvido com base no conteúdo das aulas de Arquitetura C
 <br><p><b>2º Passo</b></p>
 
      **Usando de exemplo a criação da base de dados na versão de desenvolvimento
-     • Acesse pelo terminal a pasta 'MySQL/MySQL Server 8.0/bin' dentro dos arquivos de programas do seu disco rígido
+     • Acesse pelo terminal a pasta 'MySQL/MySQL Server 8.0/bin' dentro dos arquivos de programas 
+     do seu disco rígido
      • Coloque suas credenciais
      • Copie o código de 'api/Config/script.js' 
      • Execute os códigos no terminal e pronto, seu banco de dados está configurado
