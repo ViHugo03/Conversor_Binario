@@ -50,7 +50,7 @@ Este é um projeto desenvolvido com base no conteúdo das aulas de Arquitetura C
 <br><p><b>3º Passo</b></p>
 
 
-     • Entre no diretório do SPTech Challenge em seu terminal e execute 'npm install' para que o Node.js crie os módulos no diretório
+     • Entre no diretório do Conversor_Binario api em seu terminal e execute 'npm install' para que o Node.js crie os módulos no diretório.
      • Após as instalações, execute 'npm start' para que o SPTech Challenge seja executado em seu localhost
 
 <br><p><b>Passo Final</b></p>
