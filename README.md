@@ -48,6 +48,7 @@
 <br><p><b>3º Passo</b></p>
 
 
+     • Entre na pasta api e crie um arquivo .env para configurar as variáveis de ambiente internas da aplicação, utilize o arquivo env-sample como base.
      • Entre nos diretórios da pasta Conversor_Binario api e ui e em cada diretório execute 'npm install' no terminal para que o Node.js crie os módulos no diretório.
      • Após as instalações, execute 'npm run dev' em cada terminal para que o Conversor_Binario seja executado em seu localhost
 
