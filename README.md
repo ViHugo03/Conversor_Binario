@@ -3,9 +3,8 @@
 Este é um projeto desenvolvido com base no conteúdo das aulas de Arquitetura Computacional da turma 1ADSC
 
 <div align="center">
-  <img src="" height="10%">
   <p align="center">
-  ㅤㅤㅤO  projeto  foi desenvolvido com o objetivo de unificar e organizar todos os conteúdos ministrados nas matérias do 1º semestre de Análise e Desenvolvimento de Sistemas da São Paulo Tech School para que os alunos possam ter 
+  ㅤㅤㅤO  projeto  foi desenvolvido com o objetivo de reforçar os conteúdos de Sistemas de Numeração aplicados na matéria de Arquitetura Computacional do 1º semestre de Análise e Desenvolvimento de Sistemas da São Paulo Tech School para que os alunos possam ter 
     uma maneira fácil e interativa de testar seus conhecimentos.
   </p>
   <br><br>
