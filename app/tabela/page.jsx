@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from "react"
 import { useRouter } from 'next/navigation';
-import axiosInstance from "../Config/config";
+import axiosInstance from "../_Config/config";
 
 export default function Home() {
 
@@ -28,12 +28,16 @@ export default function Home() {
 
 
   function adicionaTipo(tipo) {
-    if (tipoConversao === tipo) {
-      setTipoConversao("");
-    } else {
-      setTipoConversao(tipo);
-    }
+    setTipoConversao(prevTipo => {
+      // Se o tipo já estiver selecionado, desmarque-o
+      if (prevTipo === tipo) {
+        return "";
+      }
+      // Senão, defina o tipo selecionado
+      return tipo;
+    });
   }
+
 
   function pesquisar(event, tipo) {
     console.log(event);
@@ -60,15 +64,16 @@ export default function Home() {
         <div className="m-auto flex w-screen ">
           <button className="text-white ml-5 h-9 border-2 questao rounded-lg w-24" onClick={() => router.push("/calculadora")}>{"<= "}Voltar</button>
         </div>
-        <div className=" w-screen questao h-28 justify-around items-center flex flex-col text-white ">
+        <div className=" w-screen questao border-t-2 h-28 justify-around items-center flex flex-col text-white ">
           <h1>Tabela de Conversões</h1>
           <div className=" w-screen h-5 items-center justify-around flex flex-row">
             <div className="flex flex-row w-2/5 justify-around ">
               <div className="flex flex-row justify-evenly w-24 ">
                 <input
                   type="checkbox"
-                  value={evento[0]}
-                  onClick={(e) => {
+                  value={evento[0]} // "Decimal"
+                  checked={tipoConversao === evento[0]}
+                  onChange={(e) => {
                     adicionaTipo(e.target.value);
                   }}
                 />
@@ -77,8 +82,9 @@ export default function Home() {
               <div className="flex flex-row justify-evenly w-20 ">
                 <input
                   type="checkbox"
-                  value={evento[1]}
-                  onClick={(e) => {
+                  value={evento[1]} // "Decimal"
+                  checked={tipoConversao === evento[1]}
+                  onChange={(e) => {
                     adicionaTipo(e.target.value);
                   }}
                 />
@@ -102,8 +108,9 @@ export default function Home() {
               <div className="flex flex-row justify-evenly w-32 ">
                 <input
                   type="checkbox"
-                  value={evento[2]}
-                  onClick={(e) => {
+                  value={evento[2]} // "Decimal"
+                  checked={tipoConversao === evento[2]}
+                  onChange={(e) => {
                     adicionaTipo(e.target.value);
                   }}
                 />
@@ -112,8 +119,9 @@ export default function Home() {
               <div className="flex flex-row justify-evenly w-20 ">
                 <input
                   type="checkbox"
-                  value={evento[3]}
-                  onClick={(e) => {
+                  value={evento[3]} // "Decimal"
+                  checked={tipoConversao === evento[3]}
+                  onChange={(e) => {
                     adicionaTipo(e.target.value);
                   }}
                 />

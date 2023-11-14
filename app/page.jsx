@@ -1,49 +1,62 @@
 'use client'
 
 import { useEffect, useState } from "react"
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
+import axiosInstance from "./_Config/config";
 
 export default function Home() {
 
-  const [texto, setTexto] = useState('');
-  const router = useRouter();
+    const router = useRouter();
 
-  function removeAccents(str) {
-    return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-  }
+    const params = useSearchParams();
+    console.log(params)
 
-  function validateString(input) {
-    const textoEntrada = removeAccents(input.toLowerCase());
-    
-    const regex = /binario/;
-  
-    return regex.test(textoEntrada);
-  }
-  
+    const [email, setEmail] = useState('')
+    const [senha, setSenha] = useState('')
 
-  function validarResposta(e) {
-
-    if (validateString(e)) {
-      router.push('/calculadora')
+    function logar() {
+        axiosInstance.post('/usuario/login', {
+            email: email,
+            senha: senha
+        })
+            .then(function (response) {
+                console.log(response);
+                if (response.status == 200) {
+                    alert('Login realizado com sucesso!')
+                    router.push('/entrada')
+                } else {
+                    alert('Erro ao logar!')
+                }
+            })
+            .catch(function (error) {
+                if (error.response.status == 401) {
+                    alert('Email ou Senha incorretos!')
+                }
+            });
     }
-    else {
-      router.push('/NOTFOUND')
-    }
-  }
 
-  return (
-    <>
-      <div className="fundo flex h-screen justify-center  items-center flex-col">
-        <div className="flex text-bl w-full justify-center items-center h-full" >
-          <div className=" questao border-2 rounded-lg text-white flex flex-col w-2/5 h-4/6 m-auto justify-evenly items-center ">
-            <p className="font-bold">Inspirado por Marise's Machine</p>
-            <h1 className="font-bold">Oque era oculto e que ainda será revelado para humanidade?</h1>
-            <input type="text" className="w-2/4 border-2 rounded-lg text-black" onChange={(e) => setTexto(e.target.value)} />
-            <button className="border-2 w-20 rounded-lg" onClick={() => validarResposta(texto)} >Enviar</button>
-          </div>
-        </div >
+    return (
+        <>
+            <div className="fundo flex h-screen justify-center  items-center flex-col">
+                <div className="flex text-bl w-full justify-center items-center h-full" >
+                    <div className=" questao border-b-2 border-t-2 rounded-lg text-white flex flex-col w-2/5 h-4/6 m-auto justify-evenly items-center ">
+                        <p className="text-3xl">Login</p>
+                        <div>
+                            <h3>Email:</h3>
+                            <input type="text" defaultValue={email} className="border-2 rounded-lg text-black" onChange={(e) => setEmail(e.target.value)} />
+                        </div>
+                        <div>
+                            <h3>Senha:</h3>
+                            <input type="password" defaultValue={senha} className="border-2 rounded-lg text-black" onChange={(e) => setSenha(e.target.value)} />
+                        </div>
+                        <button className="border-2 w-20 rounded-lg" onClick={() => logar()}>Enviar</button>
+                        <h3>
+                            <a href="/cadastro">Não possui cadastro? Clique aqui!</a>
+                        </h3>
+                    </div>
+                </div >
 
-      </div>
-    </>
-  );
+            </div>
+        </>
+    );
 }

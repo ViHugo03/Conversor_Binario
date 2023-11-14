@@ -3,7 +3,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { useRouter } from 'next/navigation';
-import axiosInstance from "../Config/config";
+import axiosInstance from "../_Config/config";
 
 export default function Home() {
 
@@ -129,24 +129,24 @@ export default function Home() {
 
         <div className="flex flex-col w-screen justify-around items-center h-screen">
 
-          <div className="questao border-2 m-auto rounded-lg text-white flex flex-col w-2/6 h-3/6 justify-evenly items-center ">
+          <div className="questao border-b-2 border-t-2 m-auto rounded-lg text-white flex flex-col w-2/6 h-3/6 justify-evenly items-center ">
 
             <p>Inspirado por Marise's Machine</p>
-            <div className="calculo flex flex-row justify-around w-full">
-              <div className=" w-1/6  flex flex-col justify-center items-center"><h3>Decimal</h3>
-                <input type="text" id="inpDec" defaultValue={decimal} className="w-2/3 flex border-2 rounded-lg text-black" onChange={(e) => setTexto(e.target.value)} />
+            <div className=" flex flex-row justify-around w-full">
+              <div className=" w-2/6  flex flex-col justify-center items-center"><h3>Decimal</h3>
+                <input type="text" id="inpDec" defaultValue={decimal} className="w-2/3 flex border-2 text-center rounded-lg text-black" onChange={(e) => setTexto(e.target.value)} />
               </div>
-              <div className=" w-1/6  flex flex-col justify-center items-center"><h3>Octal</h3>
-                <input type="text" id="inpOc" defaultValue={octal} className="w-2/3 flex border-2 rounded-lg text-black" onChange={(e) => setTexto(e.target.value)} />
+              <div className=" w-2/6  flex flex-col justify-center items-center"><h3>Octal</h3>
+                <input type="text" id="inpOc" defaultValue={octal} className="w-2/3 flex border-2 text-center rounded-lg text-black" onChange={(e) => setTexto(e.target.value)} />
               </div>
 
             </div>
             <div className="flex flex-row justify-around w-full">
-              <div className=" w-1/6  flex flex-col justify-center items-center"><h3>Binário</h3>
-                <input type="text" id="inpBin" defaultValue={binario} className="w-2/3 flex border-2 rounded-lg text-black" onChange={(e) => setTexto(e.target.value)} />
+              <div className=" w-2/6  flex flex-col justify-center items-center"><h3>Binário</h3>
+                <input type="text" id="inpBin" defaultValue={binario} className="w-2/3 flex border-2 text-center rounded-lg text-black" onChange={(e) => setTexto(e.target.value)} />
               </div>
-              <div className=" w-1/5 flex flex-col justify-center items-center"><h3>Hexadecimal</h3>
-                <input type="text" id="inpHex" defaultValue={hexadecimal} className="w-2/3 flex border-2 rounded-lg text-black" onChange={(e) => setTexto(e.target.value)} />
+              <div className=" w-2/6 flex flex-col justify-center items-center"><h3>Hexadecimal</h3>
+                <input type="text" id="inpHex" defaultValue={hexadecimal} className="w-2/3 flex border-2 text-center rounded-lg text-black" onChange={(e) => setTexto(e.target.value)} />
               </div>
             </div>
             <div className="flex justify-around w-56">

@@ -1,7 +1,7 @@
 import sequelize from "sequelize";
 import connection from "../../Config/DatabaseConfig.mjs";
 
-const Conversao = connection.define('numeroconvertido', {
+const Conversao = connection.define('numeroConvertido', {
     id: {
       type: sequelize.INTEGER,
       primaryKey: true,
@@ -27,7 +27,7 @@ const Conversao = connection.define('numeroconvertido', {
       type: sequelize.DATE,
     }
   }, {
-    tableName: 'numeroconvertido',
+    tableName: 'numeroConvertido',
     timestamps: false
   });
   

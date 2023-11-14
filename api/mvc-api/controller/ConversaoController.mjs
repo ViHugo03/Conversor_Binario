@@ -19,7 +19,7 @@ export async function salvarConversao(req, res) {
 
         if (conversaoExistente) {
             // Se já existir uma conversão com esse número, não faz nada
-            res.status(200).json({ message: "Conversão já existe no banco de dados." });
+            res.status(409).json({ message: "Conversão já existe no banco de dados." });
         } else {
             // Se não existir, salva a nova conversão
             await Conversao.create(conversao);
