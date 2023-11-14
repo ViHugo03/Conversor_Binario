@@ -1,6 +1,5 @@
 # Conversor_Binario
 
-Este é um projeto desenvolvido com base no conteúdo das aulas de Arquitetura Computacional da turma 1ADSC
 
 <div align="center">
   <p align="center">
