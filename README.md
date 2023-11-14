@@ -56,7 +56,7 @@ Este é um projeto desenvolvido com base no conteúdo das aulas de Arquitetura C
 <br><p><b>Passo Final</b></p>
 
     
-    • Acesse 'localhost:3000\' em seu navegador e verifique se tudo está sendo executado corretamente
+    • Acesse 'localhost:3000/' em seu navegador e verifique se tudo está sendo executado corretamente
     • Bons Estudos! Em caso de dúvidas entre em contato com o desenvolvedor.
  
 </div>
