@@ -47,6 +47,8 @@ export async function cadastro(req, res) {
             let hex = ascii.toString(16);
             senhaHex += hex;
         }
+        // método alternativo
+        // atob(usuario.senha)
 
         const usuarioSalvar = {
             nome: usuario.nome,

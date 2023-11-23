@@ -29,11 +29,9 @@ export default function Home() {
 
   function adicionaTipo(tipo) {
     setTipoConversao(prevTipo => {
-      // Se o tipo já estiver selecionado, desmarque-o
       if (prevTipo === tipo) {
         return "";
       }
-      // Senão, defina o tipo selecionado
       return tipo;
     });
   }
@@ -71,7 +69,7 @@ export default function Home() {
               <div className="flex flex-row justify-evenly w-24 ">
                 <input
                   type="checkbox"
-                  value={evento[0]} // "Decimal"
+                  value={evento[0]} 
                   checked={tipoConversao === evento[0]}
                   onChange={(e) => {
                     adicionaTipo(e.target.value);
@@ -82,7 +80,7 @@ export default function Home() {
               <div className="flex flex-row justify-evenly w-20 ">
                 <input
                   type="checkbox"
-                  value={evento[1]} // "Decimal"
+                  value={evento[1]}
                   checked={tipoConversao === evento[1]}
                   onChange={(e) => {
                     adicionaTipo(e.target.value);
@@ -108,7 +106,7 @@ export default function Home() {
               <div className="flex flex-row justify-evenly w-32 ">
                 <input
                   type="checkbox"
-                  value={evento[2]} // "Decimal"
+                  value={evento[2]} 
                   checked={tipoConversao === evento[2]}
                   onChange={(e) => {
                     adicionaTipo(e.target.value);
@@ -119,7 +117,7 @@ export default function Home() {
               <div className="flex flex-row justify-evenly w-20 ">
                 <input
                   type="checkbox"
-                  value={evento[3]} // "Decimal"
+                  value={evento[3]} 
                   checked={tipoConversao === evento[3]}
                   onChange={(e) => {
                     adicionaTipo(e.target.value);
