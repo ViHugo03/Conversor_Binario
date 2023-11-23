@@ -40,7 +40,7 @@
           
      • Copie o código de 'api/Config/script.sql' 
      • Abra o Mysql, entre em uma conexão e em um novo arquivo cole o código copiado
-     • Execute o script e pronto seu banco de dados está criado 
+     • Execute o script, pronto! Seu banco de dados estará criado 
      
 
 
