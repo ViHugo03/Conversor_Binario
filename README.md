@@ -37,8 +37,7 @@
 
 <br><p><b>2º Passo</b></p>
 
-     **Usando de exemplo a criação da base de dados na versão de desenvolvimento
-      
+          
      • Copie o código de 'api/Config/script.js' 
      • Abra o Mysql, entre em uma conexão e em um novo arquivo cole o código copiado
      • Execute o script e pronto seu banco de dados está criado 
