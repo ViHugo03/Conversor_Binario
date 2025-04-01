@@ -15,8 +15,8 @@ export default function Home() {
     console.log(nome, email, senha)
 
     function downloadSenhaCriptografada(nome,senhaCriptografada) {
-        const mensagem = `Olá ${nome} esta é sua senha criptografada
-        00 ${senhaCriptografada}, use ela para acessar nossa aplicação!!!`;
+        const mensagem = `Olá ${nome} esta é sua senha criptografada 
+        ${senhaCriptografada}, use ela para acessar nossa aplicação!!!`;
 
         // Criando um blob com o conteúdo da mensagem
         const blob = new Blob([mensagem], { type: 'text/plain' });
